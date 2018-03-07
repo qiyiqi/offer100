@@ -1,4 +1,17 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/cn/hust/dao/ICompanyDao.java=UTF-8
 encoding//src/main/resources/jdbc.properties=UTF-8
 encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/webapp/html/offer_area.jsp=UTF-8
+encoding//src/main/webapp/html/registerFail.jsp=UTF-8
+encoding//src/main/webapp/html/reglog/com_login.jsp=UTF-8
+encoding//src/main/webapp/html/reglog/com_register.jsp=UTF-8
+encoding//src/main/webapp/html/reglog/personal_login.jsp=UTF-8
+encoding//src/main/webapp/html/reglog/personal_register.jsp=UTF-8
+encoding//src/main/webapp/html/reglog/register_guide.jsp=UTF-8
+encoding//src/main/webapp/html/search.jsp=UTF-8
+encoding//src/main/webapp/html/system/management.jsp=UTF-8
+encoding//src/main/webapp/html/system/syseditor/editor.jsp=UTF-8
+encoding//src/main/webapp/index.jsp=UTF-8
+encoding//src/test/java/org/test/Mytest.java=UTF-8
 encoding/<project>=UTF-8

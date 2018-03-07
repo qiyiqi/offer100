@@ -1,2 +1,148 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hust.dao.IJobDao" >
+  <resultMap id="BaseResultMap" type="com.cn.hust.pojo.Job" >
+    <id column="j_id" property="jId" jdbcType="INTEGER" />
+    <result column="j_name" property="jName" jdbcType="VARCHAR" />
+    <result column="j_location" property="jLocation" jdbcType="VARCHAR" />
+    <result column="j_describe" property="jDescribe" jdbcType="VARCHAR" />
+    <result column="j_time" property="jTime" jdbcType="TIMESTAMP" />
+    <result column="j_require" property="jRequire" jdbcType="VARCHAR" />
+    <result column="j_salary" property="jSalary" jdbcType="VARCHAR" />
+    <result column="j_type" property="jType" jdbcType="VARCHAR" />
+    <result column="c_id" property="cId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    j_id, j_name, j_location, j_describe, j_time, j_require, j_salary, j_type, c_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where j_id = #{jId,jdbcType=INTEGER}
+  </select>
+  <select id="getJobBycompany" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select  *  from job
+    where c_id = #{cId,jdbcType=INTEGER}
+  </select>
+  <select id="getallJob" resultMap="BaseResultMap" >
+    select  *  from job
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from job
+    where j_id = #{jId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.hust.pojo.Job" >
+    insert into job (j_id, j_name, j_location, 
+      j_describe, j_time, j_require, 
+      j_salary, j_type, c_id
+      )
+    values (#{jId,jdbcType=INTEGER}, #{jName,jdbcType=VARCHAR}, #{jLocation,jdbcType=VARCHAR}, 
+      #{jDescribe,jdbcType=VARCHAR}, #{jTime,jdbcType=TIMESTAMP}, #{jRequire,jdbcType=VARCHAR}, 
+      #{jSalary,jdbcType=VARCHAR}, #{jType,jdbcType=VARCHAR}, #{cId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hust.pojo.Job" >
+    insert into job
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jId != null" >
+        j_id,
+      </if>
+      <if test="jName != null" >
+        j_name,
+      </if>
+      <if test="jLocation != null" >
+        j_location,
+      </if>
+      <if test="jDescribe != null" >
+        j_describe,
+      </if>
+      <if test="jTime != null" >
+        j_time,
+      </if>
+      <if test="jRequire != null" >
+        j_require,
+      </if>
+      <if test="jSalary != null" >
+        j_salary,
+      </if>
+      <if test="jType != null" >
+        j_type,
+      </if>
+      <if test="cId != null" >
+        c_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jId != null" >
+        #{jId,jdbcType=INTEGER},
+      </if>
+      <if test="jName != null" >
+        #{jName,jdbcType=VARCHAR},
+      </if>
+      <if test="jLocation != null" >
+        #{jLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="jDescribe != null" >
+        #{jDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="jTime != null" >
+        #{jTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jRequire != null" >
+        #{jRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="jSalary != null" >
+        #{jSalary,jdbcType=VARCHAR},
+      </if>
+      <if test="jType != null" >
+        #{jType,jdbcType=VARCHAR},
+      </if>
+      <if test="cId != null" >
+        #{cId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.hust.pojo.Job" >
+    update job
+    <set >
+      <if test="jName != null" >
+        j_name = #{jName,jdbcType=VARCHAR},
+      </if>
+      <if test="jLocation != null" >
+        j_location = #{jLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="jDescribe != null" >
+        j_describe = #{jDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="jTime != null" >
+        j_time = #{jTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jRequire != null" >
+        j_require = #{jRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="jSalary != null" >
+        j_salary = #{jSalary,jdbcType=VARCHAR},
+      </if>
+      <if test="jType != null" >
+        j_type = #{jType,jdbcType=VARCHAR},
+      </if>
+      <if test="cId != null" >
+        c_id = #{cId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where j_id = #{jId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.hust.pojo.Job" >
+    update job
+    set j_name = #{jName,jdbcType=VARCHAR},
+      j_location = #{jLocation,jdbcType=VARCHAR},
+      j_describe = #{jDescribe,jdbcType=VARCHAR},
+      j_time = #{jTime,jdbcType=TIMESTAMP},
+      j_require = #{jRequire,jdbcType=VARCHAR},
+      j_salary = #{jSalary,jdbcType=VARCHAR},
+      j_type = #{jType,jdbcType=VARCHAR},
+      c_id = #{cId,jdbcType=INTEGER}
+    where j_id = #{jId,jdbcType=INTEGER}
+  </update>
+</mapper>
