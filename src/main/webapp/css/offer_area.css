@@ -1,0 +1,87 @@
+body {
+	font-family: Arial, Microsoft YaHei, 黑体, 宋体, sans-serif;
+	font-size: 16px;
+	line-height: 1.428571429;
+	color: #393939;
+	background-color: #fff;
+}
+
+.row.offer_title {
+    margin-top: 45px;
+}
+
+.title {
+	font-size: 68px;
+    font-weight: 900;
+    color: #50285f!important;
+    line-height: 1.15;
+}
+
+.title .title_desc {
+	    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.offer_area {
+	padding-bottom: 100px;
+	background-image: url(../img/map.svg);
+	background-repeat: no-repeat;
+	background-position: 70%;
+	min-height: 810px;
+}
+
+.offer_area .container {
+	    margin-top: 6%;
+    margin-left: 10%;
+}
+
+.offer_area .offer_desc {
+    margin-top: 15%;
+}
+
+.offer_area .company_area {
+	margin-top: 2%;
+}
+
+.offer_area .school_area {
+	margin-top: 16%;
+}
+
+.offer_area .social_area {
+	    margin-left: 23%;
+    margin-top: 9%;
+}
+
+
+.scw-title {
+	font-size: 38px;
+	font-weight: 900;
+	color: #50285f!important;
+	line-height: 1.15;
+}
+
+.scw-title-desc {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 50px;
+}
+
+.bundle {
+	padding: 5px;
+}
+
+.bundle .bundle-wrapper {
+	padding: 10px 0 20px;
+	border-radius: 4px;
+	background: #fff;
+	transition: transform .3s ease-in-out;
+	border: 2px solid #d6d6e4;
+	width: 170%;
+}
+
+.details {
+	margin-top: 30px;
+}
+

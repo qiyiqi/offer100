@@ -1,0 +1,33 @@
+.title_input {}
+
+a.title {
+	font-size: 68px;
+	font-weight: 900;
+	color: #50285f!important;
+	line-height: 1.15;
+}
+
+h3.title_desc {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.row.title_editor {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.title_input input {
+	width: 50%;
+}
+
+button.btn.btn-primary.btn-post {
+    background-color: #41204d;
+    border-color: #41204d;
+    border-radius: 4px;
+}
+
+button.btn.btn-primary.btn-post:hover {
+	background-color: #2d1c33;
+}

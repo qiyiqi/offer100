@@ -1,2 +1,125 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hust.dao.IAdminDao" >
+  <resultMap id="BaseResultMap" type="com.cn.hust.pojo.Admin" >
+    <id column="a_id" property="aId" jdbcType="INTEGER" />
+    <result column="a_name" property="aName" jdbcType="VARCHAR" />
+    <result column="a_password" property="aPassword" jdbcType="VARCHAR" />
+    <result column="a_email" property="aEmail" jdbcType="VARCHAR" />
+    <result column="a_phone" property="aPhone" jdbcType="VARCHAR" />
+    <result column="a_photo" property="aPhoto" jdbcType="VARCHAR" />
+    <result column="a_identify" property="aIdentify" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    a_id, a_name, a_password, a_email, a_phone, a_photo, a_identify
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where a_id = #{aId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  select 
+  <include refid="Base_Column_List" />
+  from admin
+  where a_email = #{aEmail,jdbcType=VARCHAR}
+ </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin
+    where a_id = #{aId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.hust.pojo.Admin" >
+    insert into admin (a_id, a_name, a_password, 
+      a_email, a_phone, a_photo, 
+      a_identify)
+    select #{aId,jdbcType=INTEGER}, #{aName,jdbcType=VARCHAR}, #{aPassword,jdbcType=VARCHAR}, 
+      #{aEmail,jdbcType=VARCHAR}, #{aPhone,jdbcType=VARCHAR}, #{aPhoto,jdbcType=VARCHAR}, 
+      #{aIdentify,jdbcType=INTEGER}
+    from dual 
+      where not exists(select a_email from admin where a_email=#{aEmail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hust.pojo.Admin" >
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aId != null" >
+        a_id,
+      </if>
+      <if test="aName != null" >
+        a_name,
+      </if>
+      <if test="aPassword != null" >
+        a_password,
+      </if>
+      <if test="aEmail != null" >
+        a_email,
+      </if>
+      <if test="aPhone != null" >
+        a_phone,
+      </if>
+      <if test="aPhoto != null" >
+        a_photo,
+      </if>
+      <if test="aIdentify != null" >
+        a_identify,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aId != null" >
+        #{aId,jdbcType=INTEGER},
+      </if>
+      <if test="aName != null" >
+        #{aName,jdbcType=VARCHAR},
+      </if>
+      <if test="aPassword != null" >
+        #{aPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aEmail != null" >
+        #{aEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="aPhone != null" >
+        #{aPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="aPhoto != null" >
+        #{aPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="aIdentify != null" >
+        #{aIdentify,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.hust.pojo.Admin" >
+    update admin
+    <set >
+      <if test="aName != null" >
+        a_name = #{aName,jdbcType=VARCHAR},
+      </if>
+      <if test="aPassword != null" >
+        a_password = #{aPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aEmail != null" >
+        a_email = #{aEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="aPhone != null" >
+        a_phone = #{aPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="aPhoto != null" >
+        a_photo = #{aPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="aIdentify != null" >
+        a_identify = #{aIdentify,jdbcType=INTEGER},
+      </if>
+    </set>
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.hust.pojo.Admin" >
+    update admin
+    set a_name = #{aName,jdbcType=VARCHAR},
+      a_password = #{aPassword,jdbcType=VARCHAR},
+      a_email = #{aEmail,jdbcType=VARCHAR},
+      a_phone = #{aPhone,jdbcType=VARCHAR},
+      a_photo = #{aPhoto,jdbcType=VARCHAR},
+      a_identify = #{aIdentify,jdbcType=INTEGER}
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+</mapper>

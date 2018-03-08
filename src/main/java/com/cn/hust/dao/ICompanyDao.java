@@ -1,5 +1,24 @@
 package com.cn.hust.dao;
 
-public interface ICompanyDao {
+import java.util.List;
 
+import com.cn.hust.pojo.Company;
+
+public interface ICompanyDao {
+    int deleteByPrimaryKey(Integer cId);
+
+    int insert(Company record);
+
+    int insertSelective(Company record);
+
+    Company selectByPrimaryKey(Integer cId);
+
+    int updateByPrimaryKeySelective(Company record);
+
+    int updateByPrimaryKey(Company record);
+    
+    List<Company> selectByflag(Integer flag);
+    
+    List<Company> findAllCompany();
 }
+

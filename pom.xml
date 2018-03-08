@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.hust</groupId>
-  <artifactId>offer100</artifactId>
+  <groupId>org.kst</groupId>
+  <artifactId>KstBackstage</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>offer100 Maven Webapp</name>
+  <name>KstBackstage Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
 		<!-- spring版本号 -->
@@ -18,7 +18,7 @@
 	</properties>
 	
   <dependencies>
-		<dependency>
+    <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
@@ -92,7 +92,7 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>8.0</version>
+			<version>7.0</version>
 		</dependency>
 		<!-- 导入Mysql数据库链接jar包 -->
 		<dependency>
@@ -162,11 +162,21 @@
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
-		</dependency>
-		
-		
-	</dependencies>
+		</dependency> 
+  </dependencies>
   <build>
     <finalName>offer100</finalName>
+    <plugins>
+			<!-- define the project compile level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+	</plugins>
   </build>
 </project>

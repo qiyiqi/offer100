@@ -1,0 +1,81 @@
+body {
+	font-family: Arial, Microsoft YaHei, 黑体, 宋体, sans-serif;
+	font-weight: 400;
+	color: #707070;
+	font-size: 16px;
+	background-color: #f9fafb;
+}
+
+.guide-box {
+	margin-top: 100px;
+}
+
+h1.big-title {
+	font-size: 68px;
+	font-weight: 900;
+	line-height: 1.15;
+}
+
+h1.big-title a {
+	color: #50285f!important;
+}
+
+h1.big-title a:hover {
+	text-decoration: none;
+	color: #552b65!important;
+}
+
+h3.big-title-desc {
+	margin-bottom: 50px!important;
+	color: black;
+	font-weight: 600;
+}
+
+.bundle {
+	padding: 5px;
+}
+
+.bundle .bundle-wrapper {
+	padding: 10px 0 20px;
+	border-radius: 4px;
+	background: #fff;
+	border: 2px solid #d6d6e4;
+	transition: transform .3s ease-in-out;
+}
+
+.bundle .top hr {
+	border-top: 2px solid #ffbd2b;
+	width: 90%;
+}
+
+.bundle .btn {
+	margin-top: 20px;
+}
+
+.bundle .main {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.bundle .main p {
+	font-size: 18px;
+}
+
+.bundle .reg a {
+	font-size: 18px;
+	font-weight: bold;
+	color: #50285f;
+	border: 1px solid #50285f;
+	width: 50%;
+}
+
+.bundle .reg a:hover {
+	background-color: #50285f;
+	color: #fff;
+}
+
+footer hr {
+    margin-top: 70px;
+    border: 0;
+    border-top: 1px solid #a79d9d;
+}
