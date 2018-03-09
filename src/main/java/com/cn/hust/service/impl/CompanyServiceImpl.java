@@ -1,5 +1,7 @@
 package com.cn.hust.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -32,5 +34,21 @@ public class CompanyServiceImpl implements ICompanyService {
 	@Override
 	public Company getCompanyByid(int id){
 		return this.companyDao.selectByPrimaryKey(id);
+	}
+	@Override
+    public List<Company> searchCompanyByFlag(Integer flag){
+		return this.companyDao.selectByflag(flag);
+    }
+	@Override
+    public Company getCompanyById(Integer id){
+		return this.companyDao.selectByPrimaryKey(id);
+    }
+	@Override
+	public int changeFlag(Company company){
+		return this.companyDao.updateByPrimaryKeySelective(company);
+	}
+	@Override
+	public List<Company> searchAllCompany(){
+		return this.companyDao.findAllCompany();
 	}
 }

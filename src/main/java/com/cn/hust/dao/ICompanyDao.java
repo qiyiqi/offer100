@@ -1,5 +1,7 @@
 package com.cn.hust.dao;
 
+import java.util.List;
+
 import com.cn.hust.pojo.Company;
 
 public interface ICompanyDao {
@@ -16,4 +18,8 @@ public interface ICompanyDao {
     int updateByPrimaryKeySelective(Company record);
 
     int updateByPrimaryKey(Company record);
+    
+    List<Company> selectByflag(Integer flag);
+    
+    List<Company> findAllCompany();
 }

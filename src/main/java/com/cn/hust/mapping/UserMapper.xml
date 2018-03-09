@@ -18,6 +18,15 @@
     from user
     where u_id = #{uId,jdbcType=INTEGER}
   </select>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  select 
+  <include refid="Base_Column_List" />
+  from user
+  where u_name = #{uName,jdbcType=VARCHAR}
+  </select> 
+  <select id="findUserList" resultMap="BaseResultMap" >
+  select * from user order by u_id asc 
+  </select> 
   <select id="getUserByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />

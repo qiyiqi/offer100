@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <META http-equiv="Content-Type"     content="text/html; charset=utf-8">
+<!DOCTYPE html>
 <html>
 
 	<head>
@@ -8,6 +9,7 @@
 	%>
 	<base 
 	href="<%=basePath%>">
+		
 		<meta charset="UTF-8">
 		<title>登录</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,20 +27,20 @@
 						offer100
 					</h1>
 					<h4 class="row title">
-						个人登录
+						管理员登录
 					</h4>
-					<form name="form" class="form-horizontal"action="/offer100/user/login" method="post" >
+					<form name="form" class="form-horizontal" action="/offer100/admin/login" method="post">
 						<div class="form-group">
-							<label class="col-sm-3 control-label">用户邮箱</label>
+							<label class="col-sm-3 control-label">邮箱</label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" name="uEmail" required="required"/>
+								<input type="text" class="form-control" name="aEmail" required="required"/>
 							</div>
 							<div class="col-sm-3"></div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">密码</label>
 							<div class="col-sm-6">
-								<input type="password" class="form-control" name="uPassword" required="required"/>
+								<input type="password" class="form-control" lay-verify="password" name="aPassword" required="required"/>
 							</div>
 							<label class="col-sm-3 forgot">
 								<a id="forgetPasswd" class="text" href="#">忘记密码?</a>
@@ -57,18 +59,6 @@
 							</div>
 						</div>
 					</form>
-					<br />
-					<hr />
-					<div class="row">
-						<div class="col-md-12 center">
-							<h4 class="title">还没有注册个人账户?</h4>
-							<div class="col-sm-6 col-sm-offset-3">
-								<a type="button" class="btn" href="personal_register.jsp">注册</a>
-							</div>
-						</div>
-					</div>
-					<br />
-					<hr />
 					<div class="row">
 						<div class="col-md-12 center">
 							<h4 class="text">了解更多，访问<a href="../../index.jsp">offer100.com</a></h4>

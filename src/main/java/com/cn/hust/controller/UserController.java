@@ -36,7 +36,29 @@ public class UserController {
 			model.addAttribute("user",user);
 			HttpSession session = request.getSession(true);
 			session.setAttribute("uId", user.getuId());
-			return "../page/company";
+			return "../page/user";
+		}
+		return "registerFail";
+	}
+	
+	@RequestMapping("/edit")  
+    public String editUser(HttpServletRequest request,Model model){  
+        HttpSession session = request.getSession(false);
+		int id = (int) session.getAttribute("uId");
+		User user = userService.getUserByid(id);
+		model.addAttribute("user",user);
+        return "../page/updateuser"; 
+	}
+	
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	public String updateUserinfo(User user,Model model,HttpServletRequest request){
+		HttpSession session = request.getSession(false);
+		int id = (int) session.getAttribute("uId");
+		user.setuId(id);
+		model.addAttribute("user",user);
+		int flag = userService.updateUserinfo(user);
+		if (flag!=0){
+			return "../page/userhome";
 		}
 		return "registerFail";
 	}

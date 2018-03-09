@@ -48,7 +48,7 @@
 							<a href="#">职场资讯</a>
 						</li>
 						<li>
-							<a href="#">系统管理</a>
+							<a href="html/reglog/admin_login.jsp">系统管理</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -64,6 +64,9 @@
 										</p>
 										<p class="login-title">
 											<a href="html/reglog/com_login.jsp">企业登录</a>
+										</p>
+										<p class="login-title">
+											<a href="html/reglog/admin_login.jsp">管理员登录</a>
 										</p>						
 								</div>
 							</div>

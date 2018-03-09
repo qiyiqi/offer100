@@ -30,6 +30,12 @@
     from company
     where c_email = #{cEmail,jdbcType=VARCHAR}
   </select>
+   <select id="selectByflag" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from company where c_flag = #{cFlag,jdbcType=INTEGER} 
+  </select> 
+  <select id="findAllCompany" resultMap="BaseResultMap"  >
+    select * from company order by c_id asc 
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from company
     where c_id = #{cId,jdbcType=INTEGER}

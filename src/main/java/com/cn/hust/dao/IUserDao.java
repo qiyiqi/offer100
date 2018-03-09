@@ -1,5 +1,7 @@
 package com.cn.hust.dao;
 
+import java.util.List;
+
 import com.cn.hust.pojo.User;
 
 public interface IUserDao {
@@ -13,7 +15,11 @@ public interface IUserDao {
     
     User getUserByEmail(String email);
 
+    User selectByName(String uName);
+    
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    
+    List<User> findUserList();
 }
