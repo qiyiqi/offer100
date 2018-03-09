@@ -33,7 +33,7 @@
 							<a href="#">用户管理</a>
 						</li>
 						<li>
-							<a href="#">企业管理</a>
+							<a href="company/entercompany">企业管理</a>
 						</li>
 						<li>
 							<a href="job/joblist">职位搜索</a>

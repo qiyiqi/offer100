@@ -51,7 +51,7 @@ public class CompanyController {
 	}
 	
 	@RequestMapping("/edit")  
-    public String editNews(HttpServletRequest request,Model model){  
+    public String editCompany(HttpServletRequest request,Model model){  
         HttpSession session = request.getSession(false);
 		int id = (int) session.getAttribute("companyid");
 		Company company = companyService.getCompanyByid(id);
@@ -70,6 +70,20 @@ public class CompanyController {
 			return "../page/companyhome";
 		}
 		return "registerFail";
+	}
+	
+	@RequestMapping("/publish")  
+    public String beforepublish(HttpServletRequest request,Model model){  
+        HttpSession session = request.getSession(false);
+		int id = (int) session.getAttribute("companyid");
+		Company company = companyService.getCompanyByid(id);
+		if(company.getcFlag()!=1){
+			return "../page/litterper";
+		}
+		else{
+			model.addAttribute("company",company);
+	        return "../page/publishjob"; 
+		}
 	}
 	
 	@RequestMapping(value="/publishjob",method=RequestMethod.POST)
@@ -138,5 +152,16 @@ public class CompanyController {
 		int jobId = Integer.parseInt(request.getParameter("id"));
 		int check = this.jobService.deleteJobByid(jobId);
 		return "../page/companyhome";	
+	}
+	
+	@RequestMapping("/entercompany")  
+    public String enterCompany(HttpServletRequest request,Model model){  
+        HttpSession session = request.getSession(false);
+        if(session.getAttribute("companyid") == null)
+        	return "reglog/com_login";
+		int id = (int) session.getAttribute("companyid");
+		Company company = companyService.getCompanyByid(id);
+		model.addAttribute("company",company);
+        return "../page/company"; 
 	}
 }
