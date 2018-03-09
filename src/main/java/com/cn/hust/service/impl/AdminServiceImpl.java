@@ -31,22 +31,7 @@ public class AdminServiceImpl implements IAdminService{
 		}
 		return null;
 	}
-    @Override
-    public User searchUseByname(String name){
-    	return this.userDao.selectByName(name);
-    }
-    @Override
-    public int deleteUseById(Integer id){
-    	return this.userDao.deleteByPrimaryKey(id);
-    }
-    @Override
-    public int updataUse(User use){
-    	return this.userDao.updateByPrimaryKey(use);
-    }
-    @Override
-    public List<User> findAllUser(){
-    	return this.userDao.findUserList();
-    }
+
     @Override
     public Admin searchAdminById(Integer id){
     	return this.adminDao.selectByPrimaryKey(id);
